@@ -57,3 +57,5 @@ add_dependency.txt
 target
 .idea
 mysql.prepare.sh
+deploy.sh
+nb-configuration.xml

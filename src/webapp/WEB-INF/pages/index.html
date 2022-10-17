@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title></title>
+  <meta charset="UTF-8">
+  <title></title>
 </head>
+
 <body>
-<div>
+  <div>
+    <h1>H1 page header</h1>
     <th:block th:each="msg : ${messages}">
-        <h1 th:text="${msg}"></h1>
+      <h1 th:text="${msg}"></h1>
     </th:block>
-</div>
+  </div>
 </body>
+
 </html>
