@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <html lang="en">
 
 <head>
@@ -10,10 +9,13 @@
 <body>
   <div>
     <h1>H1 page header</h1>
+    <p>I will display &#1025;</p>
+    <p>I will display &#x0401;</p>
     <th:block th:each="msg : ${messages}">
       <h1 th:text="${msg}"></h1>
     </th:block>
   </div>
 </body>
+<!-- <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"> -->
 
 </html>
