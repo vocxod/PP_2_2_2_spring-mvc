@@ -12,18 +12,19 @@ import java.util.List;
 import java.time.LocalTime;
 
 @Controller
-public class StartController {
+public class CarController {
 
-  private static final Logger logger = LogManager.getLogger(StartController.class);
+  private static final Logger logger = LogManager.getLogger(CarController.class);
 
-  @GetMapping(value = "/")
+  @GetMapping(value = "/car")
   public String printWelcome(ModelMap model) {
     LocalTime lt = LocalTime.now();
     List<String> messages = new ArrayList<>();
+    messages.add("Car controller of app");
     messages.add("Now time is:" + lt.toString());
     model.addAttribute("messages", messages);
-    logger.info("\u001B[33m Start page message: {} \u001B[0m", messages);
-    return "start";
+    logger.info("\u001B[34m messages: {} \u001B[0m", messages);
+    return "car";
   }
 
 }
