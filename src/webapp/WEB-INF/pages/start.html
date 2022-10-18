@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Home page</title>
+  <link rel="shortcut icon" type="image/x-icon" th:href="@{/favicon.ico}">
+  <link th:href="@{/static/styles/cssandjs/main.css}" rel="stylesheet" />
+</head>
+
+<body>
+  <h1>Задание 2.2.2</h1>
+  <ul>
+    <li>Создайте еще один контроллер, замаппленный на /cars.</li>
+    <li>Создайте модель Car с тремя произвольными полями.</li>
+    <li>Создайте список из 5 машин.</li>
+    <li>Создайте сервис с методом, который будет возвращать указанное число машин из созданного списка.</li>
+    <li>Создайте страницу cars.html. Реализуйте создание таблицы с машинами из сервиса с помощью thymeleaf.</li>
+    <li>При запросе /cars выводить весь список. При запросе /cars?count=2 должен отобразиться список из 2 машин, при
+      /cars?count=3 - из 3, и тд. При count ≥ 5 выводить весь список машин.</li>
+  </ul>
+  <ul>
+    <li>
+      <a href="hello">Запуск начального HelloController</a>
+    </li>
+  </ul>
+  <ul>
+    <li>
+      <a href="https://github.com/vocxod/PP_2_2_2_spring-mvc">github решения</a>
+    </li>
+  </ul>
+
+  <th:block th:each="msg : ${messages}">
+    <h1 th:text="${msg}"></h1>
+  </th:block>
+</body>
+
+</html>

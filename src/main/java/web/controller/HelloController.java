@@ -28,20 +28,17 @@ public class HelloController {
     messages.add("здрасти, забор подкрасьте...");
     messages.add("I'm Spring MVC application");
     messages.add("5.3.14 version by oct'2022 ");
-    messages.add("Noow time is:" + lt.toString());
+    messages.add("Now time is:" + lt.toString());
     model.addAttribute("messages", messages);
-
-    logger.debug("messages: {}", messages);
-    logger.info("WelcomeVraGos");
-    logger.error("ErrorVragos");
-
-    logger.debug("scard Debug log message");
-    logger.info("scard Info log message");
-    logger.error("scard Error log message");
-    logger.warn("scard Warn log message");
-    logger.fatal("scard Fatal log message");
-    logger.trace("scard Trace log message");
-
+    logger.info("\u001B[1,32m messages: {} \u001B[0m", messages);
+    /*
+     * logger.debug("scard Debug log message");
+     * logger.info("scard Info log message");
+     * logger.error("scard Error log message");
+     * logger.warn("scard Warn log message");
+     * logger.fatal("scard Fatal log message");
+     * logger.trace("scard Trace log message");
+     */
     return "index";
   }
 
