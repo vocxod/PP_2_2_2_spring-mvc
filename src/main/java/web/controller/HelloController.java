@@ -24,7 +24,7 @@ public class HelloController {
   public String printWelcome(ModelMap model) {
     LocalTime lt = LocalTime.now();
     List<String> messages = new ArrayList<>();
-    messages.add("\u0411\u0412\u0413\u0414\u0415\u0416");
+    messages.add("\u0411\u0412\u0413\u0414\u0415\u0416\u0416");
     messages.add("здрасти, забор подкрасьте...");
     messages.add("I'm Spring MVC application");
     messages.add("5.3.14 version by oct'2022 ");
