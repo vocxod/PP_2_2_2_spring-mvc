@@ -60,3 +60,4 @@ mysql.prepare.sh
 deploy.sh
 nb-configuration.xml
 echolog.sh
+.factorypath 
