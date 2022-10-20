@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.time.LocalTime;
 
@@ -60,6 +61,28 @@ public class CarController {
     model.addAttribute("local_time", lt);
     logger.info("\u001B[1;33m Cars: {} \u001B[0m", cars);
     return "cars";
+  }
+
+  /**
+   * Add 5 cars to database
+   */
+  @GetMapping("/cars/add")
+  public String addCars(ModelMap model) {
+    List<String> message = new ArrayList<>();
+    message.add("Добавлено 5 авто в БД");
+    model.addAttribute("message", message);
+    return "index";
+  }
+
+  /**
+   * Delete cars from database
+   */
+  @GetMapping("/cars/delete")
+  public String deleteCars(ModelMap model) {
+    List<String> message = new ArrayList<>();
+    message.add("Все авто из БД удалены");
+    model.addAttribute("message", message);
+    return "index";
   }
 
 }

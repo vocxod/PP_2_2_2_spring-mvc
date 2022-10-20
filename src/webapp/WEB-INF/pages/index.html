@@ -15,10 +15,11 @@
       <h3 th:text="${msg}"></h3>
     </th:block>
 
-    <h2>Carefully Styled Heading</h2>
-    <p>
-      This is text on which we want to apply <strong>very special</strong> styling.
-    </p>
+    <ul>
+      <li><a th:href="@{/cars/add}">Добавить еще 5 авто в БД</a></li>
+      <li><a th:href="@{/cars/delete}">Удалить все авто</a></li>
+    </ul>
+
   </div>
   <a th:href="@{/}">На главную</a>
 </body>
