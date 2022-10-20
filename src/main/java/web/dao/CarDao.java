@@ -8,6 +8,8 @@ public interface CarDao {
 
   List<Car> getCars();
 
+  List<Car> getCars(int count);
+
   public void saveCar(Car car);
 
   public Car getCar(long carId);
