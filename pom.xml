@@ -9,26 +9,44 @@
   <packaging>war</packaging>
 
   <properties>
+    <failOnMissingWebXml>false</failOnMissingWebXml>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <spring.version>5.3.14</spring.version>
+    <hibernate.version>5.6.3.Final</hibernate.version>
+    <hibernate.validator>5.6.3.Final</hibernate.validator>
+    <c3p0.version>0.9.5.2</c3p0.version>
+    <jstl.version>1.2.1</jstl.version>
+    <tld.version>1.1.2</tld.version>
+    <servlets.version>3.1.0</servlets.version>
+    <jsp.version>2.3.1</jsp.version>
+    <hsqldb.version>1.8.0.10</hsqldb.version>
     <maven-war-plugin.version>3.3.2</maven-war-plugin.version>
     <maven-compiler-plugin.version>3.10.1</maven-compiler-plugin.version>
   </properties>
 
   <dependencies>
-
+    <!-- Spring MVC Dependency -->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-webmvc</artifactId>
       <version>${spring.version}</version>
     </dependency>
 
+    <!-- Spring ORM -->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-orm</artifactId>
-      <version>5.3.14</version>
+      <version>${spring.version}</version>      
     </dependency>
 
+    <!-- Hibernate Core -->
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-core</artifactId>
+      <version>${hibernate.version}</version>
+    </dependency>
+
+    <!-- Servlet Dependency -->
     <dependency>
       <groupId>javax.servlet</groupId>
       <artifactId>javax.servlet-api</artifactId>
@@ -50,6 +68,7 @@
       <type>maven-plugin</type>
     </dependency>
 
+    <!-- Logger -->
     <dependency>
       <groupId>org.apache.logging.log4j</groupId>
       <artifactId>log4j-core</artifactId>
@@ -62,22 +81,27 @@
       <version>2.18.0</version>
     </dependency>
 
+    <!-- MySQL -->
     <dependency>
       <groupId>mysql</groupId>
       <artifactId>mysql-connector-java</artifactId>
       <version>8.0.25</version>
     </dependency>
 
+    <!-- JAXB problem resolve -->
+    <!-- https://mvnrepository.com/artifact/jakarta.xml.bind/jakarta.xml.bind-api -->
     <dependency>
-      <groupId>org.hibernate.javax.persistence</groupId>
-      <artifactId>hibernate-jpa-2.1-api</artifactId>
-      <version>1.0.2.Final</version>
+      <groupId>jakarta.xml.bind</groupId>
+      <artifactId>jakarta.xml.bind-api</artifactId>
+      <version>2.3.3</version>
     </dependency>
 
+    <!-- https://mvnrepository.com/artifact/com.sun.xml.bind/jaxb-ri -->
     <dependency>
-      <groupId>org.hibernate</groupId>
-      <artifactId>hibernate-core</artifactId>
-      <version>5.6.3.Final</version>
+      <groupId>com.sun.xml.bind</groupId>
+      <artifactId>jaxb-ri</artifactId>
+      <version>2.3.7</version>
+      <type>pom</type>
     </dependency>
 
   </dependencies>
@@ -91,7 +115,7 @@
           <version>${maven-war-plugin.version}</version>
           <configuration>
             <warSourceDirectory>src/webapp</warSourceDirectory>
-            <warName>spring_mvc</warName>
+            <warName>pp222</warName>
             <failOnMissingWebXml>false</failOnMissingWebXml>
           </configuration>
         </plugin>
@@ -130,7 +154,7 @@
       </plugin>
 
     </plugins>
-    <finalName>Spring_MVC</finalName>
+    <finalName>pp222</finalName>
   </build>
 
 </project>

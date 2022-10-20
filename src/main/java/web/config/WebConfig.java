@@ -37,7 +37,7 @@ public class WebConfig implements WebMvcConfigurer {
     templateResolver.setPrefix("/WEB-INF/pages/");
     templateResolver.setSuffix(".html");
     templateResolver.setCharacterEncoding("UTF-8");
-    logger.info("UTF-8 charset enabled.");
+    logger.info("\u001B[32m WebConfig: templateResolver Bean. \u001B[0m]");
     return templateResolver;
   }
 
@@ -46,11 +46,13 @@ public class WebConfig implements WebMvcConfigurer {
     SpringTemplateEngine templateEngine = new SpringTemplateEngine();
     templateEngine.setTemplateResolver(templateResolver());
     templateEngine.setEnableSpringELCompiler(true);
+    logger.info("\u001B[36m WebConfig: SpringTemplateEngine Bean. \u001B[0m]");
     return templateEngine;
   }
 
   @Override
   public void configureViewResolvers(ViewResolverRegistry registry) {
+    logger.info("\u001B[35m WebConfig: configureViewResolvers Bean. \u001B[0m]");
     ThymeleafViewResolver resolver = new ThymeleafViewResolver();
     resolver.setCharacterEncoding("UTF-8");
     resolver.setTemplateEngine(templateEngine());

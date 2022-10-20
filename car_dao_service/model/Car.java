@@ -36,6 +36,7 @@ public class Car {
     this.color = color;
   }
 
+
   public Long getId() {
     return id;
   }
@@ -69,7 +70,7 @@ public class Car {
   }
 
   public String toString() {
-    return "Модель:" + this.model + " Серия:" + this.series + " Цвет:" + this.color;
+    return "Model:" + this.model + " series:" + this.series + " color:" + this.color;
   }
 
 }

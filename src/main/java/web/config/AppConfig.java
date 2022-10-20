@@ -1,5 +1,7 @@
 package web.config;
 
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -20,6 +22,8 @@ import java.util.Properties;
 @ComponentScan(value = "web")
 public class AppConfig {
 
+  private static final Logger logger = LogManager.getLogger(AppConfig.class);
+
   @Autowired
   private Environment env;
 
@@ -30,6 +34,7 @@ public class AppConfig {
     dataSource.setUrl(env.getProperty("db.url"));
     dataSource.setUsername(env.getProperty("db.username"));
     dataSource.setPassword(env.getProperty("db.password"));
+    logger.info("\u001B[32m AppConfig: getDataSource Bean. \u001B[0m]");
     return dataSource;
   }
 
@@ -44,6 +49,7 @@ public class AppConfig {
     props.put("hibernate.dialect", env.getProperty("hibernate.dialect"));
     factoryBean.setHibernateProperties(props);
     factoryBean.setPackagesToScan(new String[] { "web.model" });
+    logger.info("\u001B[33m AppConfig: getSessionFactory Bean. \u001B[0m]");
     return factoryBean;
   }
 
@@ -51,6 +57,7 @@ public class AppConfig {
   public HibernateTransactionManager getTransactionManager() {
     HibernateTransactionManager transactionManager = new HibernateTransactionManager();
     transactionManager.setSessionFactory(getSessionFactory().getObject());
+    logger.info("\u001B[36m AppConfig: getTransactionManager Bean. \u001B[0m]");
     return transactionManager;
   }
 }
