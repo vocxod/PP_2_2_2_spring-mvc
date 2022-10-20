@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import web.service.CarService;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,11 +24,14 @@ public class CarController {
   @GetMapping(value = "/car")
   public String printWelcome(ModelMap model) {
     LocalTime lt = LocalTime.now();
-    List<String> messages = new ArrayList<>();
+    CarService cs;
+    List<String> cars = new ArrayList<>();
+    /*
     messages.add("Car controller of app");
     messages.add("Now time is:" + lt.toString());
     model.addAttribute("messages", messages);
     logger.info("\u001B[34m messages: {} \u001B[0m", messages);
+     */
     return "car";
   }
 
