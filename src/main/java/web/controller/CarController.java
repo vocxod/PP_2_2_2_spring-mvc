@@ -19,11 +19,11 @@ public class CarController {
   @GetMapping(value = "/car")
   public String printWelcome(ModelMap model) {
     LocalTime lt = LocalTime.now();
-    List<String> messages = new ArrayList<>();
-    messages.add("Car controller of app");
-    messages.add("Now time is:" + lt.toString());
-    model.addAttribute("messages", messages);
-    logger.info("\u001B[34m messages: {} \u001B[0m", messages);
+    List<String> cars = new ArrayList<>();
+    cars.add("москвиТч");
+    model.addAttribute("cars", cars);
+    model.addAttribute("local_time", lt);
+    logger.info("\u001B[1;33m Cars: {} \u001B[0m", cars);
     return "car";
   }
 

@@ -11,9 +11,12 @@
 <body>
   <div>
     <h1>Car page (автомобили)</h1>
-    <th:block th:each="msg : ${messages}">
-      <h3 th:text="${msg}"></h3>
+    <th:block th:each="car : ${cars}">
+      <h3 th:text="${car}"></h3>
     </th:block>
+  </div>
+  <div>
+    <p th:text="${local_time}"></p>
   </div>
   <div>
     <a th:href="@{/}">На главную</a>
