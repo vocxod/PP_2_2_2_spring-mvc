@@ -22,7 +22,7 @@ import java.util.Properties;
 @ComponentScan(value = "web")
 public class AppConfig {
 
-  private static final Logger logger = LogManager.getLogger(WebConfig.class);
+  private static final Logger logger = LogManager.getLogger(AppConfig.class);
 
   @Autowired
   private Environment env;
