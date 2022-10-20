@@ -99,7 +99,7 @@
           <version>${maven-war-plugin.version}</version>
           <configuration>
             <warSourceDirectory>src/webapp</warSourceDirectory>
-            <warName>spring_mvc</warName>
+            <warName>pp222</warName>
             <failOnMissingWebXml>false</failOnMissingWebXml>
           </configuration>
         </plugin>

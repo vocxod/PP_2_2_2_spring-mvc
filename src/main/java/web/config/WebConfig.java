@@ -33,7 +33,7 @@ public class WebConfig implements WebMvcConfigurer {
     templateResolver.setPrefix("/WEB-INF/pages/");
     templateResolver.setSuffix(".html");
     templateResolver.setCharacterEncoding("UTF-8");
-    logger.info("\u001B[32m templateResolver Bean. \u001B[0m]");
+    logger.info("\u001B[32m WebConfig: templateResolver Bean. \u001B[0m]");
     return templateResolver;
   }
 
