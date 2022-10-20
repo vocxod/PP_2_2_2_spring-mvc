@@ -11,6 +11,7 @@
 <body>
   <div>
     <h1>Car page (автомобили)</h1>
+    <h3 th:text="${message}"></h3>
     <table>
       <th:block th:each="car : ${cars}">
         <tr>

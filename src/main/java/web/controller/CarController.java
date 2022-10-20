@@ -27,7 +27,6 @@ public class CarController {
   public String showCarList(@RequestParam(required = false) String count,
       ModelMap model) {
     LocalTime lt = LocalTime.now();
-    int show = 0;
     int showCount = 0;
     String message = "";
     try {
@@ -40,6 +39,9 @@ public class CarController {
       } else if (Integer.parseInt(count) < 0) {
         showCount = 0;
         message = "Значение count только ПОЛОЖИТЕЛЬНОЕ число!";
+      } else if (Integer.parseInt(count) == 0) {
+        showCount = 0;
+        message = "Значение count = 0 Данные показаны не будут!";
       }
     } catch (Exception e) {
       // Show nothing
@@ -49,7 +51,7 @@ public class CarController {
     }
     List<Car> cars = null;
     if (showCount > 0 && showCount < 6) {
-      cars = carService.getCars();
+      cars = carService.getCars(showCount);
     } else if (showCount == Integer.MAX_VALUE) {
       cars = carService.getCars(showCount);
     }
