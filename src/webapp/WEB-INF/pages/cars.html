@@ -13,15 +13,11 @@
     <h1>Car page (автомобили)</h1>
     <h3 th:text="${message}"></h3>
     <table>
-      <th:block th:each="car : ${cars}">
-        <tr>
-          <td th:text="${car}"></td>
-          <!--
-          <td th:text="${car.getSeria()}"></td>
-          <td th:text="${car.getColor()}"></td>
-          -->
-        </tr>
-      </th:block>
+      <tr th:each="car : ${cars}">
+        <td th:text="${car.model}">Model ...</td>
+        <td th:text="${car.series}">Series ...</td>
+        <td th:text="${car.color}">Color ...</td>
+      </tr>
     </table>
   </div>
   <div>
